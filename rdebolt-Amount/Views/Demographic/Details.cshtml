@@ -1,0 +1,55 @@
+﻿@model rdebolt_Amount.Models.Demographic
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "DemographicController";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Demographic</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Credit)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Credit)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Defaults)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Defaults)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DebtTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DebtTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Risk)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Risk)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

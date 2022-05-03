@@ -1,0 +1,49 @@
+﻿@model IEnumerable<rdebolt_Amount.Models.Loan>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div>
+<h1 lass="display-4">Index Loan</h1>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<form asp-controller="Movies" asp-action="Index">
+    <p>
+        Amount: <input type="text" name="searchAmt" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+<table class="table">
+        <tr>
+            <th>
+                Amount
+            </th>
+            <th>
+                APR
+            </th>
+            <th>
+                Duration
+            </th>
+        </tr>
+        @foreach(var item in Model){
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.apr)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.duration)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                </td>
+            </tr>
+        }        
+        
+
+    </table>
+</div>
